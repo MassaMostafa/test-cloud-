@@ -7,7 +7,7 @@ jobs:
   say-hello:
     strategy:
         matrix:
-            os: [ubuntu-latest, ubuntu-20, windows-latest]
+            os: [ubuntu-latest]
     runs-on: ${{ matrix.os }}
     steps:
       - name: Say Hello
