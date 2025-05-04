@@ -5,10 +5,21 @@ on: push
 
 jobs:
   say-hello:
-    strategy:
-        matrix:
-            os: [ubuntu-latest]
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-latest
     steps:
-      - name: Say Hello
-        run: echo "Hello from a manually triggered workflow!"
+      
+
+      - name: docker setup
+        run: docker/setup-docker-action@v4
+
+      - name: echo docker detais
+        run: docker info
+
+      - name: run image
+        run: docker run hello-world
+
+
+
+
+
+
